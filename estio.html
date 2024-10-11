@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1, user-scalable=no">
+    
+
+
+    <title>28</title>
+</head>
+<body class="works">
+    <div id="bt1" class="bt w">
+        <div id="n28">
+            _numero28
+        </div>
+    </div>
+    <div id="bt2" class="bt w">
+        <h4>
+            me
+        </h4>
+    </div>
+    <div  id="bt3" class="bt w">
+        <h4>
+            dm
+        </h4>
+    </div>
+    <div id="bt4" class="bt w">
+        <h4>
+            stuff
+        </h4>
+    </div>
+
+    <div class="showProject">
+        <div class="slide single icon">
+            <img src="media/estio/estio slide logo.svg" alt="">
+        </div>
+        <div class="slide single">
+            <img class="full-img" src="media/estio/render horizontal.webp" alt="">
+        </div>
+        <div class="slide">
+            <img class="full-img" src="media/estio/render etiqueta roja.webp" alt="">
+            <img class="full-img" src="media/estio/render rojo ind.webp" alt="">
+        </div>
+        <div class="slide">
+            <img class="full-img" src="media/estio/render etiqueta blanco.webp" alt="">
+            <img class="full-img" src="media/estio/render blanco ind.webp" alt="">
+        </div>
+        <div class="slide">
+            <img class="full-img" src="media/estio/render blanco.webp" alt="">
+            <img class="full-img" src="media/estio/render rojo.webp" alt="">
+        </div>
+        <div class="slide single">
+            <img class="full-img" src="media/estio/render campaña.webp" alt="">
+        </div>
+        <div class="slide credit">
+            <span class="credit-title">CREDITS</span>
+            <wrap class="credit-info">
+                <span class="credit-type col1">TITLE</span>
+                <span class="credit-type col2">Vermouth de elaboración tradicional con regusto a moderno.</span>
+                <span class="credit-type col1"> SERVICES</span>
+                <span class="credit-type col2"> Art Direction, Campaing, 3D Rendering, Branding </span>
+                <span class="credit-type col1">CLIENT</span>
+                <span class="credit-type col2">ESTIO vermouth.</span>
+                <span class="credit-type col1">YEAR</span>
+                <span class="credit-type col2">2024.</span>
+                <span class="credit-type col1">LOCATION</span>
+                <span class="credit-type col2">Madrid, ESP.</span>
+            
+            
+            </wrap>
+            <span class="credit-title">DESCRIPTION</span>
+            <span class="description-info">
+                ESTÍO nace de la idea de aportar y mejorar la experiencia del momento de disfrutar del vermut de forma social. Se trata más de la experiencia y la percepción en sí que del propio sabor del vermut, pretendiendo ofrecer el momento de disfrutar de esta bebida como algo moderno, fresco y visualmente enriquecedor. Que de la misma manera que acompaña el propio vaso de vermut, con sus sofisticadas pieles de naranja, sus olivas atravesadas y sus hielos llenos de glamour, la propia lata sirva como un más en esa mesa de aperitivo donde, en una tradición más bien antigua, invite a pensar en los cambios de época y en las nuevas maneras de adaptar estas viejas tradiciones. 
+                <br><br>
+                El nuevo formato, además de mostrar un nuevo elemento en estos aperitivos, ofrece la posibilidad de tomar el vermut en más sitios y de forma más móvil y compacta proponiendo nuevas maneras de consumir la bebida.
+            </span>
+            
+        </div>
+        <div class="signature">
+            <p>everything by <a href="yo.html">28</a></p>
+        </div>
+    </div>
+
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/script.js"></script>
+</body>
+
+
+
+<!-- 
+Para incorporar esta funcionalidad de visualización de imágenes en pantalla completa en tu sitio web, puedes seguir los pasos detallados a continuación. En el ejemplo, usaremos JavaScript (JQuery) y HTML.
+HTML:
+Vamos a suponer que este es el HTML de tu imagen:
+html
+Copy
+<img id="miImagen" src="ruta/de/tu/imagen.jpg" alt="descripcion de la imagen" style="cursor:pointer"/>
+Con el style="cursor:pointer", hacemos que el puntero del mouse cambie a una mano cuando pase sobre la imagen, indicando que es clickeable.
+JavaScript:
+Necesitarás tener incluida la librería JQuery en tu archivo HTML, lo puedes hacer añadiendo la siguiente línea al final, justo antes de la etiqueta </body>:
+html
+Copy
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+Añade este JavaScript (JQuery) a tu archivo:
+html
+Copy
+<script>
+$(document).ready(function(){
+    $("#miImagen").click(function(){
+        var imagenSrc = $(this).attr("src");
+        $("body").append("<div id='imagenGrandeDiv' style='position:fixed;top:0;left:0;height:100%;width:100%;background:rgba(0,0,0,0.8);display:flex;justify-content:center;align-items:center;cursor:pointer'><img src='"+imagenSrc+"' style='max-height:80%;max-width:80%;'/></div>");
+        $("#imagenGrandeDiv").click(function(){
+            $(this).remove();
+        });
+    });
+});
+</script>
+Así, cuando hagas clic en la imagen, se creará un nuevo div que cubrirá toda la pantalla y mostrará tu imagen en el centro. Si haces clic nuevamente en cualquier parte de la pantalla, se cerrará la vista en pantalla completa de la imagen.
+Por favor haz una copia de seguridad de tu código antes de realizar cualquier cambio y pruébalo antes de hacerlo en vivo. ¡Espero que eso te ayude! -->
