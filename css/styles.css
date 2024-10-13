@@ -39,6 +39,7 @@ html, body {
 
 h4 {
     font-size: 1em;
+    margin: 0 0 0 0;
 }
 
 a {
@@ -384,7 +385,7 @@ a {
     position: fixed;
     left: 2vw;
     top: 50vh;
-    width: 1vw;
+    width: fit-content;
     height: auto;
     color: var(--w);
 }
@@ -393,7 +394,7 @@ a {
     position: fixed;
     right: 2vw;
     top: 50vh;
-    width: 1vw;
+    width: fit-content;
     height: auto;
     color: var(--w);
 }
@@ -543,7 +544,7 @@ a {
 #prevProject.project-arrow, #nextProject.project-arrow {
     position: fixed;
     top: 50vh;
-    width: 1vw;
+    width: fit-content;
     height: auto;
     color: var(--w);
     cursor: pointer;
@@ -590,4 +591,107 @@ a {
 
 #keepScroll.hidden, #HomekeepScroll.hidden {
     opacity: 0;
+}
+
+
+
+@media (max-width: 768px) {
+    .project {
+        padding: 0 1em 0 1em;
+        flex-direction: column;
+    }    
+
+    .hovLogo {
+        width: 100%;
+    }
+
+    .logo img {
+        width: 30vw;
+    }
+
+    .slide {
+        height: 100%;
+        flex-direction: column;
+    }
+
+    .slide img:not(:first-child) {
+        margin-top: 3em;
+    }
+
+    .slide p {
+        width: 100%;
+        padding: 0 1em 0 1em;
+    }
+
+    .icon {
+        height: 100vh;
+        flex-direction: row;
+    }
+
+    .icon img {
+        width: 50%;
+    }
+
+    .credit {
+        padding: 7em 0 0 0;
+        grid-template-columns: 1fr;
+
+    }
+
+    .credit-info, .description-info {
+        grid-column: 1;
+        column-gap: 2em;
+    }
+
+    .grid-things {
+        grid-template-columns: repeat(6, 1fr);
+        grid-column-gap: 5vw;
+        grid-row-gap: 5vh;
+    }
+
+    .s1, .s2, .s3, .s4, .s5, .s6, .s7, .s8, .s9, .s10 {
+        grid-column: span 6;
+        grid-row: auto;
+    }
+
+    .s9 {
+        z-index: 1;
+    }
+
+    .my-things {
+        top: 30vh;
+        width: 80vw;
+        color: var(--w);
+    }
+
+    .text-thing {
+        width: 35%;
+        font-size: 1.2em;
+    }
+
+    #carousel {
+        align-items: center;
+    }
+
+    .carousel-image {
+        width: 100%;
+        height: fit-content;
+    }
+
+    .carousel-arrow-left, .carousel-arrow-right {
+        top: 85vh;
+    }
+
+    .carousel-arrow-left {
+        left: 25vw;
+    }
+
+    .carousel-arrow-right {
+        right: 25vw;
+    }
+
+    .project-arrow {
+        top: 85vh;
+    }
+
 }
