@@ -3,6 +3,7 @@
     --helveObl:"helveObl";
     --times: "times";
     --gara: "gara";
+    --garaNormal: "gara normal";
     --b: #000000;
     --w: #fff;
     --r: #ff0000;
@@ -21,6 +22,11 @@
 @font-face {
     font-family: "gara";
     src: url(fonts/ITCGaramondStd-LtCond.otf);
+}
+
+@font-face {
+    font-family: "gara normal";
+    src: url(fonts/ITCGaramondStd-Lt.otf);
 }
 
 * {
@@ -254,6 +260,9 @@ a {
     text-align: justify;
 }
 
+#b {
+    font-family: var(--garaNormal);
+}
 
 .short {
     width: 65%;
@@ -363,6 +372,7 @@ a {
     grid-column-gap: 2vw;
     grid-row-gap: 2vw;
     grid-auto-rows: minmax(auto, auto);
+    background: var(--w);
 }
 
 .grid-things > * :not(.bt, .carousel-image, #carousel){
@@ -656,7 +666,7 @@ a {
         grid-row: auto;
     }
 
-    .s9 {
+    .s5, .s6, .s9 {
         z-index: 5;
     }
 
