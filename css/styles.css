@@ -473,6 +473,11 @@ a {
     grid-row: 28 / span 2;
 }
 
+.s11 {
+    grid-column: 10 / span 2;
+    grid-row: 32 / span 2;
+}
+
 .info {
     font-family: var(--gara);
     font-size: 1em;
