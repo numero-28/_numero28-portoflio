@@ -36,57 +36,69 @@ $(document).ready(function() {
         // Ocultamos el div "gallery"
         $('#gallery, #hovImg').hide();
         $('#HomekeepScroll').css('opacity', 0); // Garantiza que inicie visible
-
-
+    
         // Variable para verificar si se encontró el proyecto
         var found = false;
-
+    
         // Mostramos el .showProject correspondiente
         $('.showProject').each(function() {
             if ($(this).data('project') === project) {
                 found = true;
-                $('.bt').addClass('w');
-                $(this).css('display', 'flex');
-                $(this).css('background-color', 'black');
+                $(this).css({
+                    display: 'flex',
+                    'background-color': 'black'
+                });
                 $(this).show();
             } else {
                 $(this).hide();
             }
         });
-
+    
         // Mostrar u ocultar los botones de navegación
         if (found) {
             $('#prevProject, #nextProject').show();
-            $('#keepScroll').show(); 
+            $('#keepScroll').show();
             window.scrollTo(0, 0);
-            // $(window).on('scroll', function() {
-            //     if ($(this).scrollTop() > 90) { // Ajusta el valor según lo necesario
-            //         $('#prevProject, #nextProject').addClass('project-arrow');
-            //     } else {
-            //         $('#prevProject, #nextProject').removeClass('project-arrow');
-            //     }
-            // });
-            
-            $(window).on('scroll', function() {
     
+            // Configuración del comportamiento de scroll para botones
+            $(window).on('scroll', function() {
                 if ($(this).scrollTop() > 90) {
                     $('#prevProject, #nextProject').addClass('project-arrow');
                 } else {
                     $('#prevProject, #nextProject').removeClass('project-arrow');
                 }
-        
-                if ($(this).scrollTop() > 30) { 
+    
+                if ($(this).scrollTop() > 30) {
                     $('#keepScroll').addClass('hidden');
                 } else {
                     $('#keepScroll').removeClass('hidden');
                 }
             });
-
+    
+            // Observador para la visibilidad de `.showProject`
+            const checkVisibility = function() {
+                let isVisible = false;
+                $('.showProject').each(function() {
+                    if ($(this).is(':visible')) {
+                        isVisible = true;
+                        return false; // Rompe el bucle
+                    }
+                });
+    
+                if (isVisible) {
+                    $('.bt').addClass('w');
+                } else {
+                    $('.bt').removeClass('w');
+                }
+            };
+    
+            // Llamar periódicamente para verificar visibilidad
+            setInterval(checkVisibility, 100); // Cada 100ms
         } else {
             $('#prevProject, #nextProject, #keepScroll').hide();
         }
-
     }
+    
 
     var projects = $('.showProject').map(function() {
         return $(this).data('project');

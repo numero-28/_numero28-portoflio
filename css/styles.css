@@ -46,6 +46,7 @@ html, body {
 h4 {
     font-size: 1em;
     margin: 0 0 0 0;
+    font-weight: normal;
 }
 
 a {
@@ -265,7 +266,7 @@ a {
 }
 
 #b {
-    font-family: var(--garaNormal);
+    font-family: var(--garaAlt);
 }
 
 .short {
