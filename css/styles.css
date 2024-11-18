@@ -666,7 +666,7 @@ a {
         grid-row-gap: 5vh;
     }
 
-    .s1, .s2, .s3, .s4, .s5, .s6, .s7, .s8, .s9, .s10 {
+    .s1, .s2, .s3, .s4, .s5, .s6, .s7, .s8, .s9, .s10, .s11 {
         grid-column: span 6;
         grid-row: auto;
     }
@@ -692,7 +692,8 @@ a {
 
     .carousel-image {
         width: 100%;
-        height: fit-content;
+        height: auto;
+        max-height: 90%;
     }
 
     .carousel-arrow-left, .carousel-arrow-right {
