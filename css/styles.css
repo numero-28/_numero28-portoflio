@@ -415,6 +415,15 @@ a {
     color: var(--w);
 }
 
+.carousel-title {
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    font-size: 0.9em;
+    color: var(--w);
+    font-family: var(--helveObl);
+}
+
 .stuff img, .info img {
     width: 100%;
     height: auto;

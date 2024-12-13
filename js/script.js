@@ -141,30 +141,43 @@ $(document).ready(function() {
         });
     }
     
-    
-    $(".indv-img").click(function(){
-        var imagenSrc = $(this).attr("src");
-        $("body").append("<div id='imagenGrandeDiv' style='position:fixed;top:0;left:0;height:100%;width:100%;background:rgba(10,10,10,0.9);display:flex;justify-content:center;align-items:center;cursor:pointer'><img src='"+imagenSrc+"' style='max-height:90%;max-width:90%;'/></div>");
-        $("#imagenGrandeDiv").click(function(){
-            $(this).remove();
-        });
-    });
-
-    $(".full-img").click(function(){
+    $(".full-img").click(function () {
         var imagenSrc = $(this).attr("src");
         var relatedImages = $(this).data("related").split(',');
-        var carouselHtml = "<div id='carousel'><img class='carousel-image' src='" + imagenSrc + "' /><div class='carousel-arrow carousel-arrow-left'>(←)</div><div class='carousel-arrow carousel-arrow-right'>(→)</div></div>";
-        
-        $("body").append("<div id='imagenGrandeDiv' style='position:fixed;top:0;left:0;height:100%;width:100%;background:rgba(10,10,10,0.9);display:flex;justify-content:center;align-items:center;cursor:pointer;z-index:10'>" + carouselHtml + "</div>");
-        
+    
+        // Extraer palabra clave del atributo src
+        var keyword = imagenSrc.split('/')[2]; // Cambia el índice según la estructura del src
+        var carouselHtml = `
+            <div id='carousel'>
+                <img class='carousel-image' src='${imagenSrc}' />
+                <div class='carousel-arrow carousel-arrow-left'>(←)</div>
+                <div class='carousel-arrow carousel-arrow-right'>(→)</div>
+                <div class='carousel-title'>${keyword}</div> <!-- Texto dinámico -->
+            </div>
+        `;
+    
+        $("body").append(`
+            <div id='imagenGrandeDiv' style='position:fixed;top:0;left:0;height:100%;width:100%;background:rgba(10,10,10,0.99);display:flex;justify-content:center;align-items:center;cursor:pointer;z-index:10'>
+                ${carouselHtml}
+            </div>
+        `);
+    
         var carouselIndex = 0;
-        $('.carousel-arrow-right, .carousel-arrow-left').click(function(event) {
+    
+        $('.carousel-arrow-right, .carousel-arrow-left').click(function (event) {
             event.stopPropagation();
-            carouselIndex = (event.target.classList.contains('carousel-arrow-right') ? (carouselIndex + 1) : (carouselIndex + relatedImages.length - 1)) % relatedImages.length;
-            $('.carousel-image').attr('src', relatedImages[carouselIndex]);
+            carouselIndex = (event.target.classList.contains('carousel-arrow-right') ?
+                (carouselIndex + 1) : (carouselIndex + relatedImages.length - 1)) % relatedImages.length;
+    
+            // Actualizar la imagen y la palabra clave en el carrusel
+            var newSrc = relatedImages[carouselIndex];
+            $('.carousel-image').attr('src', newSrc);
+    
+            var newKeyword = newSrc.split('/')[2]; // Extraer palabra clave del nuevo src
+            $('.carousel-title').text(newKeyword);
         });
     
-        $(document).keydown(function(event) {
+        $(document).keydown(function (event) {
             if ($('#imagenGrandeDiv').length) {
                 switch (event.which) {
                     case 37: // Left Arrow Key
@@ -174,15 +187,20 @@ $(document).ready(function() {
                         carouselIndex = (carouselIndex + 1) % relatedImages.length;
                         break;
                 }
-                $('.carousel-image').attr('src', relatedImages[carouselIndex]);
+                // Actualizar la imagen y la palabra clave en el carrusel
+                var newSrc = relatedImages[carouselIndex];
+                $('.carousel-image').attr('src', newSrc);
+    
+                var newKeyword = newSrc.split('/')[2]; // Extraer palabra clave del nuevo src
+                $('.carousel-title').text(newKeyword);
             }
         });
-        
-        $("#carousel").click(function(){
+    
+        $("#carousel").click(function () {
             $('#imagenGrandeDiv').remove();
         });
     
-        $(".carousel-arrow").click(function(event){
+        $(".carousel-arrow").click(function (event) {
             event.stopPropagation();
         });
     });
