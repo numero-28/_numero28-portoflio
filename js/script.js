@@ -32,6 +32,19 @@ $(document).ready(function() {
     });
     
 
+    // Efecto hover imágenes stuff
+    $(".stuff img").on("mouseover", function () {
+        $(".stuff img").not(this).addClass("blurred");
+        $(".text-thing").addClass("blurred");
+    });
+
+    $(".stuff img").on("mouseleave", function () {
+        $(".stuff img").removeClass("blurred");
+        $(".text-thing").removeClass("blurred");
+    });
+
+
+    // showProject
     function showProject(project) {
         // Ocultamos el div "gallery"
         $('#gallery, #hovImg').hide();

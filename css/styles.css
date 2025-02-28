@@ -369,6 +369,7 @@ a {
     font-size: 1em;
     text-align: justify;
     width: 30%;
+    transition: 0.3s;
 }
 
 .grid-things {
@@ -428,11 +429,21 @@ a {
     width: 100%;
     height: auto;
     object-fit: cover;
+    transition: 0.3s;
 }
 
-.indv-img, .full-img {
+.blurred {
+    filter: blur(10px);
+}
+
+.full-img {
+    cursor: url('../media/stuff/1x/Recurso 1.png') 10 10, auto;
+}
+
+.indv-img {
     cursor: pointer;
 }
+
 
 .s1{
     grid-column: 2 / span 2;
