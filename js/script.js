@@ -33,6 +33,15 @@ $(document).ready(function() {
     
 
     // Efecto hover imágenes stuff
+    $(".bt").on("mouseover", function () {
+        $(".bt").addClass("big-hover");
+    });
+
+    $(".bt").on("mouseleave", function () {
+        $(".bt").removeClass("big-hover");
+    });
+
+    // hover bt principales
     $(".stuff img").on("mouseover", function () {
         $(".stuff img").not(this).addClass("blurred");
         $(".text-thing").addClass("blurred");
