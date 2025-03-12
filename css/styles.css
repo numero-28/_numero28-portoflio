@@ -702,7 +702,7 @@ a {
         grid-row-gap: 5vh;
     }
 
-    .s1, .s2, .s3, .s4, .s5, .s6, .s7, .s8, .s9, .s10, .s11 {
+    .s1, .s2, .s3, .s4, .s5, .s6, .s7, .s8, .s9, .s10, .s11, .s12 {
         grid-column: span 6;
         grid-row: auto;
     }
