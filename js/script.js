@@ -225,8 +225,10 @@ $(document).ready(function() {
             }
         });
     
-        $("#carousel").click(function () {
-            $('#imagenGrandeDiv').remove();
+        $("#imagenGrandeDiv").click(function (event) {
+            if (!$(event.target).closest("video").length) {
+                $('#imagenGrandeDiv').remove();
+            }
         });
     
         $(".carousel-arrow").click(function (event) {
