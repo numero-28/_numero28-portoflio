@@ -165,16 +165,31 @@ $(document).ready(function() {
     
     $(".full-img").click(function () {
         var imagenSrc = $(this).attr("src");
-        var relatedImages = $(this).data("related").split(',');
+        var relatedMedia = $(this).data("related").split(',');
     
-        // Extraer palabra clave del atributo src
-        var keyword = imagenSrc.split('/')[2]; // Cambia el índice según la estructura del src
+        var carouselIndex = 0;
+    
+        function getMediaHtml(src) {
+            var isVideo = src.endsWith('.mp4');
+            if (isVideo) {
+                return `<video class='carousel-media' controls autoplay>
+                            <source src='${src}' type='video/mp4'>
+                            Tu navegador no soporta videos.
+                        </video>`;
+            } else {
+                return `<img class='carousel-media' src='${src}' />`;
+            }
+        }
+    
+        function getKeyword(src) {
+            return src.split('/')[2]; // Extraer palabra clave del src
+        }    
         var carouselHtml = `
             <div id='carousel'>
-                <img class='carousel-image' src='${imagenSrc}' />
+                ${getMediaHtml(imagenSrc)}
                 <div class='carousel-arrow carousel-arrow-left'>(←)</div>
                 <div class='carousel-arrow carousel-arrow-right'>(→)</div>
-                <div class='carousel-title'>${keyword}</div> <!-- Texto dinámico -->
+                <div class='carousel-title'>${getKeyword(imagenSrc)}</div>
             </div>
         `;
     
@@ -184,37 +199,29 @@ $(document).ready(function() {
             </div>
         `);
     
-        var carouselIndex = 0;
-    
         $('.carousel-arrow-right, .carousel-arrow-left').click(function (event) {
             event.stopPropagation();
             carouselIndex = (event.target.classList.contains('carousel-arrow-right') ?
-                (carouselIndex + 1) : (carouselIndex + relatedImages.length - 1)) % relatedImages.length;
+                (carouselIndex + 1) : (carouselIndex + relatedMedia.length - 1)) % relatedMedia.length;
     
-            // Actualizar la imagen y la palabra clave en el carrusel
-            var newSrc = relatedImages[carouselIndex];
-            $('.carousel-image').attr('src', newSrc);
-    
-            var newKeyword = newSrc.split('/')[2]; // Extraer palabra clave del nuevo src
-            $('.carousel-title').text(newKeyword);
+            var newSrc = relatedMedia[carouselIndex];
+            $('.carousel-media').replaceWith(getMediaHtml(newSrc));
+            $('.carousel-title').text(getKeyword(newSrc));
         });
     
         $(document).keydown(function (event) {
             if ($('#imagenGrandeDiv').length) {
                 switch (event.which) {
                     case 37: // Left Arrow Key
-                        carouselIndex = (carouselIndex + relatedImages.length - 1) % relatedImages.length;
+                        carouselIndex = (carouselIndex + relatedMedia.length - 1) % relatedMedia.length;
                         break;
                     case 39: // Right Arrow Key
-                        carouselIndex = (carouselIndex + 1) % relatedImages.length;
+                        carouselIndex = (carouselIndex + 1) % relatedMedia.length;
                         break;
                 }
-                // Actualizar la imagen y la palabra clave en el carrusel
-                var newSrc = relatedImages[carouselIndex];
-                $('.carousel-image').attr('src', newSrc);
-    
-                var newKeyword = newSrc.split('/')[2]; // Extraer palabra clave del nuevo src
-                $('.carousel-title').text(newKeyword);
+                var newSrc = relatedMedia[carouselIndex];
+                $('.carousel-media').replaceWith(getMediaHtml(newSrc));
+                $('.carousel-title').text(getKeyword(newSrc));
             }
         });
     
@@ -226,6 +233,7 @@ $(document).ready(function() {
             event.stopPropagation();
         });
     });
+    
 
     function checkIfStuffPage() {
         return window.location.href.indexOf('stuff.html') !== -1;

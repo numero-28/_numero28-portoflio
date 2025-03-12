@@ -84,8 +84,7 @@ a {
 }
 
 .big-hover {
-    font-size: 3em;
-}
+    font-size: 1.5em}
 
 .w {
     color: var(--w);
@@ -508,6 +507,11 @@ a {
 .s11 {
     grid-column: 10 / span 2;
     grid-row: 32 / span 2;
+}
+
+.s12 {
+    grid-column: 9 / span 3;
+    grid-row: 16 / span 2;
 }
 
 .info {
