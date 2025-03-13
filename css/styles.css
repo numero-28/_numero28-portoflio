@@ -84,7 +84,7 @@ a {
 }
 
 .big-hover {
-    font-size: 3em;
+    font-size: 1.5em;
 }
 
 .w {
@@ -341,7 +341,6 @@ a {
     grid-template-columns: 0.2fr 1fr;
     grid-gap: 0.4em;
     width: 45%;
-
 }
 
 .col1 {
