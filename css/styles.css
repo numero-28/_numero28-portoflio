@@ -84,7 +84,8 @@ a {
 }
 
 .big-hover {
-    font-size: 1.5em}
+    font-size: 3em;
+}
 
 .w {
     color: var(--w);
@@ -318,6 +319,7 @@ a {
     font-size: 1em;
     color: var(--w);
     width: 100%;
+    height: 100%;
     grid-template-columns: 0.1fr 1fr;
     grid-template-rows: min-content;
     grid-gap: 3em;
@@ -338,6 +340,8 @@ a {
     display: grid;
     grid-template-columns: 0.2fr 1fr;
     grid-gap: 0.4em;
+    width: 45%;
+
 }
 
 .col1 {
@@ -353,6 +357,7 @@ a {
     font-family: var(--helveObl);
     grid-column: 2;
     text-align: justify;
+    width: 45%;
 }
 
 .my-things {
@@ -688,12 +693,13 @@ a {
     .credit {
         padding: 7em 0 0 0;
         grid-template-columns: 1fr;
-
+        width: auto;
     }
 
     .credit-info, .description-info {
         grid-column: 1;
         column-gap: 2em;
+        width: auto;
     }
 
     .grid-things {
