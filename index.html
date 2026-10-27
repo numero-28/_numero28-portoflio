@@ -12,10 +12,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="css/styles.css" rel="stylesheet" type="text/css" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 
 
     <title>28</title>
+    <link rel="icon" href="media/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="media/favicon/favicon-96.png" type="image/png" sizes="96x96">
+    <link rel="apple-touch-icon" href="media/favicon/apple-touch-icon.png">
 </head>
 
 <body>
@@ -107,6 +110,9 @@
 
     </div>
 
+    <!-- Móvil: un cuadradito por proyecto para saltar entre cajas (los genera script.js) -->
+    <div id="projectDots"></div>
+
     <!-- Logo grande en color que aparece en el centro durante el hover (lo rellena script.js) -->
     <img id="hoverLogo" alt="">
 
@@ -117,343 +123,352 @@
     </div>
 
 
-    <div class="showProject" data-project="estio">
-        <div class="slide single icon">
-            <img src="media/estio/estio slide logo.svg" alt="">
-        </div>
-        <div class="slide single">
-            <img  src="media/estio/render horizontal.webp" alt="">
-        </div>
-        <div class="slide">
-            <img  src="media/estio/render etiqueta roja.webp" alt="">
-            <img  src="media/estio/render rojo ind.webp" alt="">
-        </div>
-        <div class="slide">
-            <img  src="media/estio/render etiqueta blanco.webp" alt="">
-            <img  src="media/estio/render blanco ind.webp" alt="">
-        </div>
-        <div class="slide single">
-            <img  src="media/estio/render campaña.webp" alt="">
-        </div>
-        <div class="slide credit">
-            <span class="credit-title">CREDITS</span>
-            <wrap class="credit-info">
-                <span class="credit-type col1">TITLE</span>
-                <span class="credit-type col2">"Vermouth de elaboración tradicional con regusto a moderno." &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Traditionally crafted vermouth with a modern twist. </span>
-                <span class="credit-type col1"> SERVICES</span>
-                <span class="credit-type col2"> Art Direction, Campaing, 3D Rendering, Branding </span>
-                <span class="credit-type col1">CLIENT</span>
-                <span class="credit-type col2">ESTIO vermouth.</span>
-                <span class="credit-type col1">YEAR</span>
-                <span class="credit-type col2">2024.</span>
-                <span class="credit-type col1">LOCATION</span>
-                <span class="credit-type col2">Madrid, ESP.</span>
+    <!-- Tarjeta de proyecto: sube desde abajo por encima del index (la controla script.js) -->
+    <div id="projectOverlay">
+        <div id="projectCard">
+        <div class="showProject" data-project="estio">
+            <div class="slide single icon">
+                <img src="media/estio/estio slide logo.svg" alt="">
+            </div>
+            <div class="slide single">
+                <img  src="media/estio/render horizontal.webp" alt="">
+            </div>
+            <div class="slide">
+                <img  src="media/estio/render etiqueta roja.webp" alt="">
+                <img  src="media/estio/render rojo ind.webp" alt="">
+            </div>
+            <div class="slide">
+                <img  src="media/estio/render etiqueta blanco.webp" alt="">
+                <img  src="media/estio/render blanco ind.webp" alt="">
+            </div>
+            <div class="slide single">
+                <img  src="media/estio/render campaña.webp" alt="">
+            </div>
+            <div class="slide credit">
+                <span class="credit-title">CREDITS</span>
+                <wrap class="credit-info">
+                    <span class="credit-type col1">TITLE</span>
+                    <span class="credit-type col2">"Vermouth de elaboración tradicional con regusto a moderno." &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Traditionally crafted vermouth with a modern twist. </span>
+                    <span class="credit-type col1"> SERVICES</span>
+                    <span class="credit-type col2"> Art Direction, Campaing, 3D Rendering, Branding </span>
+                    <span class="credit-type col1">CLIENT</span>
+                    <span class="credit-type col2">ESTIO vermouth.</span>
+                    <span class="credit-type col1">YEAR</span>
+                    <span class="credit-type col2">2024.</span>
+                    <span class="credit-type col1">LOCATION</span>
+                    <span class="credit-type col2">Madrid, ESP.</span>
             
             
-            </wrap>
-            <span class="credit-title">DESCRIPTION</span>
-            <span class="description-info">
-                ESTÍO nace de la idea de aportar y mejorar la experiencia del momento de disfrutar del vermut de forma social. Se trata más de la experiencia y la percepción en sí que del propio sabor del vermut, pretendiendo ofrecer el momento de disfrutar de esta bebida como algo moderno, fresco y visualmente enriquecedor. Que de la misma manera que acompaña el propio vaso de vermut, con sus sofisticadas pieles de naranja, sus olivas atravesadas y sus hielos llenos de glamour, la propia lata sirva como un más en esa mesa de aperitivo donde, en una tradición más bien antigua, invite a pensar en los cambios de época y en las nuevas maneras de adaptar estas viejas tradiciones. 
-                <br><br>
-                El nuevo formato, además de mostrar un nuevo elemento en estos aperitivos, ofrece la posibilidad de tomar el vermut en más sitios y de forma más móvil y compacta proponiendo nuevas maneras de consumir la bebida.
-                <br><br> - <br><br>
-                ESTÍO was born from the idea of contributing and improving the experience of the moment of enjoying vermouth in a social way. It is more about the experience and the perception itself than the taste of vermouth itself, aiming to offer the moment of enjoying this drink as something modern, fresh and visually enhancing. In the same way that it accompanies the glass of vermouth itself, with its sophisticated orange peels, its crossed olives and its glamorous ice, the can itself serves as an extra at the aperitif table where, in a rather old tradition, it invites us to think about the changing times and the new ways of adapting these old traditions.
-                <br><br>
-                The new format, besides showing a new element in these aperitifs, offers the possibility of drinking vermouth in more places and in a more mobile and compact way, proposing new ways of consuming the drink.
+                </wrap>
+                <span class="credit-title">DESCRIPTION</span>
+                <span class="description-info">
+                    ESTÍO nace de la idea de aportar y mejorar la experiencia del momento de disfrutar del vermut de forma social. Se trata más de la experiencia y la percepción en sí que del propio sabor del vermut, pretendiendo ofrecer el momento de disfrutar de esta bebida como algo moderno, fresco y visualmente enriquecedor. Que de la misma manera que acompaña el propio vaso de vermut, con sus sofisticadas pieles de naranja, sus olivas atravesadas y sus hielos llenos de glamour, la propia lata sirva como un más en esa mesa de aperitivo donde, en una tradición más bien antigua, invite a pensar en los cambios de época y en las nuevas maneras de adaptar estas viejas tradiciones. 
+                    <br><br>
+                    El nuevo formato, además de mostrar un nuevo elemento en estos aperitivos, ofrece la posibilidad de tomar el vermut en más sitios y de forma más móvil y compacta proponiendo nuevas maneras de consumir la bebida.
+                    <br><br> - <br><br>
+                    ESTÍO was born from the idea of contributing and improving the experience of the moment of enjoying vermouth in a social way. It is more about the experience and the perception itself than the taste of vermouth itself, aiming to offer the moment of enjoying this drink as something modern, fresh and visually enhancing. In the same way that it accompanies the glass of vermouth itself, with its sophisticated orange peels, its crossed olives and its glamorous ice, the can itself serves as an extra at the aperitif table where, in a rather old tradition, it invites us to think about the changing times and the new ways of adapting these old traditions.
+                    <br><br>
+                    The new format, besides showing a new element in these aperitifs, offers the possibility of drinking vermouth in more places and in a more mobile and compact way, proposing new ways of consuming the drink.
 
-            </span>
+                </span>
             
+            </div>
+            <div class="signature">
+                <p>everything by <a href="yo.html">28</a></p>
+            </div>
         </div>
-        <div class="signature">
-            <p>everything by <a href="yo.html">28</a></p>
-        </div>
-    </div>
-    <div class="showProject" data-project="artificis">
-        <div class="slide single icon">
-            <img src="media/artificis/artificis slide logo.svg" alt="">
-        </div>
-        <div class="slide">
-            <img  src="media/artificis/artificis naturals 1 - 5 .webp" alt="">
-            <img  src="media/artificis/artificis naturals 2 - 1 .webp" alt="">
-        </div>
-        <div class="slide single">
-            <img  src="media/artificis/detalle mockup.webp" alt="">
-        </div>
-        <div class="slide">
-            <img  src="media/artificis/artificis naturals 4 -4 .webp" alt="">
-            <img  src="media/artificis/artificis naturals 5 - 3.webp" alt="">        
-        </div>
-        <div class="slide single">
-            <img  src="media/artificis/artificis naturals 3 - 2 + mock expanded center.webp" alt="">
-        </div>
-        <div class="slide single">
-            <img  src="media/artificis/artificis naturals 3 - 2 .webp" alt="">
-        </div>
-        <div class="slide single">
-            <img  src="media/artificis/5 gráficas.webp" alt="">
-        </div>
-        <div class="slide credit">
-            <span class="credit-title">CREDITS</span>
-            <wrap class="credit-info">
-                <span class="credit-type col1">TITLE</span>
-                <span class="credit-type col2">"Artificis Naturals."</span>
-                <span class="credit-type col1"> SERVICES</span>
-                <span class="credit-type col2"> Art Direction, Campaing, Photography, Branding </span>
-                <span class="credit-type col1">CLIENT</span>
-                <span class="credit-type col2">Disseny Hub Barcelona and Museu de Ciènces Naturals de Barcelona.</span>
-                <span class="credit-type col1">YEAR</span>
-                <span class="credit-type col2">2025.</span>
-                <span class="credit-type col1">LOCATION</span>
-                <span class="credit-type col2">Barcelona, ESP.</span>
-            
-            
-            </wrap>
-            <span class="credit-title">DESCRIPTION</span>
-            <span class="description-info">
-                Artificis Naturals trata de cuestionar acerca del valor de la naturaleza en un mundo postmoderno y digitalizado mediante imágenes que capturan esta naturaleza aplicando una luz artificial, generando un diálogo, tanto visual como conceptual, sobre nuestra relación con el entorno en la era de la hiperconectividad.
-                <br><br>
-                La propuesta se basa en la premisa del enfretamiento entre lo natural y lo artificial, así como en su mezcla dentro del diseño.
-                <br><br>
-                Para la producción de la campaña se realizó  una serie de fotografías nocturnas de diferentes tipos de flores, en la que se utilizó baja exposición y flash, además de un proceso posterior de edición intensa, para crear contrastes fuertes e inusuales, como principal protagonista de las gráficas.
-                <br><br> - <br><br>
-                Artificis Naturals seeks to question the value of nature in a postmodern and digitalized world through images that capture this nature by applying an artificial light, generating a dialogue, both visual and conceptual, about our relationship with the environment in the era of hyperconnectivity.
-                <br><br>
-                The proposal is based on the premise of the encounter between the natural and the artificial, as well as their blending within design.
-                <br><br>
-                For the production of the campaign, a series of night photographs of different types of flowers were taken, in which low exposure and flash were used, in addition to a subsequent process of intense editing, to create strong and unusual contrasts, as the main protagonist of the graphics.
-            </span>
-            
-        </div>
-        <div class="signature">
-            <p>everything by <a href="yo.html">28</a></p>
-        </div>
-    </div>
-    <div class="showProject" data-project="desf">
-        <div class="slide single icon short">
-            <img src="media/desf/desf.svg" alt="logo desf">
-        </div>
-        <div class="slide single">
-            <p>El mundo de la noche y la fiesta siempre ha dado lugar a la creación y aparición de emociones y sensaciones. Las
-            reuniones de personas, las amistades momentáneas, las situaciones reveladoras, fugacidad, movimiento, música,
-            alcohol, tocar fondo, estar en lo más alto. Todo esto junto y deformado en una especie de pinceladas románticas que
-            plasman un momento pero no lo observan, nos muestran, con humilde poesía, la realidad de los momentos de la fiesta
-            donde nada es claro y todo se siente más. Este proyecto fotográfico busca revelar esa realidad deformada que se vive
-            durante las noches, mirar directamente a esos recuerdos borrosos que se quedan en nuestras mentes como pequeñas
-            muestras de una realidad que se siente incierta.
-            <br><br><br><br><br><br><br>
-            The world of the night and the party has always given rise to the creation and appearance of emotions and sensations. The
-            gatherings of people, momentary friendships, revealing situations, transience, movement, music,
-            alcohol, bottoming out, being on top. All this together and deformed in a kind of romantic brushstrokes that capture a moment but do not observe it.
-            capture a moment but do not observe it, they show us, with humble poetry, the reality of the moments of the party where nothing is clear and everything is
-            where nothing is clear and everything is felt more. This photographic project seeks to reveal that distorted reality that is lived during the nights, to look directly to those
-            during the nights, to look directly at those blurred memories that stay in our minds as small samples of a reality that feels
-            samples of a reality that feels uncertain.</p>
-        </div>
-        <div class="slide single">
-            <img src="media/desf/pliego 1.webp" alt="desf 1">
-        </div>
-        <div class="slide single">
-            <img src="media/desf/pliego 2.webp" alt="desf 2">
-        </div>
-        <div class="slide single">
-            <img src="media/desf/pliego 3.webp" alt="desf 3">
-        </div>
-        <div class="slide single">
-            <img src="media/desf/pliego 4.webp" alt="desf 4">
-        </div>
-        <div class="slide single">
-            <img src="media/desf/pliego 5.webp" alt="desf 5">
-        </div>
-        <div class="slide single">
-            <img src="media/desf/pliego 6.webp" alt="desf 6">
-        </div>
-        <div class="slide single">
-            <img src="media/desf/pliego 7.webp" alt="desf 7">
-        </div>
-        <div class="slide single">
-            <img src="media/desf/pliego 8.webp" alt="desf 8">
-        </div>
-        <div class="slide single">
-            <img src="media/desf/pliego 9.webp" alt="desf 9">
-        </div>
-        <div class="slide single">
-            <img src="media/desf/pliego 10.webp" alt="desf 10">
-        </div>
-        <div class="slide credit">
-            <span class="credit-title">CREDITS</span>
-            <wrap class="credit-info">
-                <span class="credit-type col1">TITLE</span>
-                <span class="credit-type col2">Proyecto Desf.</span>
-                <span class="credit-type col1"> SERVICES</span>
-                <span class="credit-type col2"> Photography, Editorial</span>
-                <span class="credit-type col1">CLIENT</span>
-                <span class="credit-type col2">Myself.</span>
-                <span class="credit-type col1">YEAR</span>
-                <span class="credit-type col2">2023.</span>
-                <span class="credit-type col1">LOCATION</span>
-                <span class="credit-type col2">Madrid, ESP.</span>
+        <div class="showProject" data-project="artificis">
+            <div class="slide single icon">
+                <img src="media/artificis/artificis slide logo.svg" alt="">
+            </div>
+            <div class="slide">
+                <img  src="media/artificis/artificis naturals 1 - 5 .webp" alt="">
+                <img  src="media/artificis/artificis naturals 2 - 1 .webp" alt="">
+            </div>
+            <div class="slide single">
+                <img  src="media/artificis/detalle mockup.webp" alt="">
+            </div>
+            <div class="slide">
+                <img  src="media/artificis/artificis naturals 4 -4 .webp" alt="">
+                <img  src="media/artificis/artificis naturals 5 - 3.webp" alt="">        
+            </div>
+            <div class="slide single">
+                <img  src="media/artificis/artificis naturals 3 - 2 + mock expanded center.webp" alt="">
+            </div>
+            <div class="slide single">
+                <img  src="media/artificis/artificis naturals 3 - 2 .webp" alt="">
+            </div>
+            <div class="slide single">
+                <img  src="media/artificis/5 gráficas.webp" alt="">
+            </div>
+            <div class="slide credit">
+                <span class="credit-title">CREDITS</span>
+                <wrap class="credit-info">
+                    <span class="credit-type col1">TITLE</span>
+                    <span class="credit-type col2">"Artificis Naturals."</span>
+                    <span class="credit-type col1"> SERVICES</span>
+                    <span class="credit-type col2"> Art Direction, Campaing, Photography, Branding </span>
+                    <span class="credit-type col1">CLIENT</span>
+                    <span class="credit-type col2">Disseny Hub Barcelona and Museu de Ciènces Naturals de Barcelona.</span>
+                    <span class="credit-type col1">YEAR</span>
+                    <span class="credit-type col2">2025.</span>
+                    <span class="credit-type col1">LOCATION</span>
+                    <span class="credit-type col2">Barcelona, ESP.</span>
             
             
-            </wrap>
-            <span class="credit-title">DESCRIPTION</span>
-            <span class="description-info">
-                Es un trabajo fotográfico personal, hecho para mi y para mi yo de hace unos años a modo de deuda con una necesidad que
-                surgió en mi hace ya varios años, pero que no me había atrevido a realizar seriamente hasta 2023. <br><br> Ahora ya se
-                trata de una historia sin cerrar que no se si encontrará su final algún día...
-                <br><br><br> - <br><br><br>
-                It is a personal photographic work, made for me and for my self of a few years ago as a debt with a need that arose in me several years ago, but that I had not dared to do seriously until 2023.  <br><br> Now it is an unfinished story that I don't know if it will find its end someday...
-            </span>
+                </wrap>
+                <span class="credit-title">DESCRIPTION</span>
+                <span class="description-info">
+                    Artificis Naturals trata de cuestionar acerca del valor de la naturaleza en un mundo postmoderno y digitalizado mediante imágenes que capturan esta naturaleza aplicando una luz artificial, generando un diálogo, tanto visual como conceptual, sobre nuestra relación con el entorno en la era de la hiperconectividad.
+                    <br><br>
+                    La propuesta se basa en la premisa del enfretamiento entre lo natural y lo artificial, así como en su mezcla dentro del diseño.
+                    <br><br>
+                    Para la producción de la campaña se realizó  una serie de fotografías nocturnas de diferentes tipos de flores, en la que se utilizó baja exposición y flash, además de un proceso posterior de edición intensa, para crear contrastes fuertes e inusuales, como principal protagonista de las gráficas.
+                    <br><br> - <br><br>
+                    Artificis Naturals seeks to question the value of nature in a postmodern and digitalized world through images that capture this nature by applying an artificial light, generating a dialogue, both visual and conceptual, about our relationship with the environment in the era of hyperconnectivity.
+                    <br><br>
+                    The proposal is based on the premise of the encounter between the natural and the artificial, as well as their blending within design.
+                    <br><br>
+                    For the production of the campaign, a series of night photographs of different types of flowers were taken, in which low exposure and flash were used, in addition to a subsequent process of intense editing, to create strong and unusual contrasts, as the main protagonist of the graphics.
+                </span>
             
+            </div>
+            <div class="signature">
+                <p>everything by <a href="yo.html">28</a></p>
+            </div>
         </div>
-        <div class="signature">
-            <p>everything by <a href="yo.html">28</a></p>
-        </div>
+        <div class="showProject" data-project="desf">
+            <div class="slide single icon short">
+                <img src="media/desf/desf.svg" alt="logo desf">
+            </div>
+            <div class="slide single">
+                <p>El mundo de la noche y la fiesta siempre ha dado lugar a la creación y aparición de emociones y sensaciones. Las
+                reuniones de personas, las amistades momentáneas, las situaciones reveladoras, fugacidad, movimiento, música,
+                alcohol, tocar fondo, estar en lo más alto. Todo esto junto y deformado en una especie de pinceladas románticas que
+                plasman un momento pero no lo observan, nos muestran, con humilde poesía, la realidad de los momentos de la fiesta
+                donde nada es claro y todo se siente más. Este proyecto fotográfico busca revelar esa realidad deformada que se vive
+                durante las noches, mirar directamente a esos recuerdos borrosos que se quedan en nuestras mentes como pequeñas
+                muestras de una realidad que se siente incierta.
+                <br><br><br><br><br><br><br>
+                The world of the night and the party has always given rise to the creation and appearance of emotions and sensations. The
+                gatherings of people, momentary friendships, revealing situations, transience, movement, music,
+                alcohol, bottoming out, being on top. All this together and deformed in a kind of romantic brushstrokes that capture a moment but do not observe it.
+                capture a moment but do not observe it, they show us, with humble poetry, the reality of the moments of the party where nothing is clear and everything is
+                where nothing is clear and everything is felt more. This photographic project seeks to reveal that distorted reality that is lived during the nights, to look directly to those
+                during the nights, to look directly at those blurred memories that stay in our minds as small samples of a reality that feels
+                samples of a reality that feels uncertain.</p>
+            </div>
+            <div class="slide single">
+                <img src="media/desf/pliego 1.webp" alt="desf 1">
+            </div>
+            <div class="slide single">
+                <img src="media/desf/pliego 2.webp" alt="desf 2">
+            </div>
+            <div class="slide single">
+                <img src="media/desf/pliego 3.webp" alt="desf 3">
+            </div>
+            <div class="slide single">
+                <img src="media/desf/pliego 4.webp" alt="desf 4">
+            </div>
+            <div class="slide single">
+                <img src="media/desf/pliego 5.webp" alt="desf 5">
+            </div>
+            <div class="slide single">
+                <img src="media/desf/pliego 6.webp" alt="desf 6">
+            </div>
+            <div class="slide single">
+                <img src="media/desf/pliego 7.webp" alt="desf 7">
+            </div>
+            <div class="slide single">
+                <img src="media/desf/pliego 8.webp" alt="desf 8">
+            </div>
+            <div class="slide single">
+                <img src="media/desf/pliego 9.webp" alt="desf 9">
+            </div>
+            <div class="slide single">
+                <img src="media/desf/pliego 10.webp" alt="desf 10">
+            </div>
+            <div class="slide credit">
+                <span class="credit-title">CREDITS</span>
+                <wrap class="credit-info">
+                    <span class="credit-type col1">TITLE</span>
+                    <span class="credit-type col2">Proyecto Desf.</span>
+                    <span class="credit-type col1"> SERVICES</span>
+                    <span class="credit-type col2"> Photography, Editorial</span>
+                    <span class="credit-type col1">CLIENT</span>
+                    <span class="credit-type col2">Myself.</span>
+                    <span class="credit-type col1">YEAR</span>
+                    <span class="credit-type col2">2023.</span>
+                    <span class="credit-type col1">LOCATION</span>
+                    <span class="credit-type col2">Madrid, ESP.</span>
+            
+            
+                </wrap>
+                <span class="credit-title">DESCRIPTION</span>
+                <span class="description-info">
+                    Es un trabajo fotográfico personal, hecho para mi y para mi yo de hace unos años a modo de deuda con una necesidad que
+                    surgió en mi hace ya varios años, pero que no me había atrevido a realizar seriamente hasta 2023. <br><br> Ahora ya se
+                    trata de una historia sin cerrar que no se si encontrará su final algún día...
+                    <br><br><br> - <br><br><br>
+                    It is a personal photographic work, made for me and for my self of a few years ago as a debt with a need that arose in me several years ago, but that I had not dared to do seriously until 2023.  <br><br> Now it is an unfinished story that I don't know if it will find its end someday...
+                </span>
+            
+            </div>
+            <div class="signature">
+                <p>everything by <a href="yo.html">28</a></p>
+            </div>
 
-    </div>
-    <div class="showProject" data-project="loewe">
-        <div class="slide single icon short">
-            <img src="media/loewe/Loewe_logo.svg" alt="logo desf">
         </div>
-        <div class="slide">
-            <img src="media/loewe/diagonal entera.webp" alt="loewe 2">
-            <img src="media/loewe/ojo entero.webp" alt="loewe 3">
-        </div>
-        <div class="slide">
-            <img src="media/loewe/detalle esquina.webp" alt="loewe 4">
-            <img src="media/loewe/detalle centro.webp" alt="loewe 5">
-        </div>
-        <div class="slide single">
-            <img src="media/loewe/general.webp" alt="loewe 1">
-        </div>
+        <div class="showProject" data-project="loewe">
+            <div class="slide single icon short">
+                <img src="media/loewe/Loewe_logo.svg" alt="logo desf">
+            </div>
+            <div class="slide">
+                <img src="media/loewe/diagonal entera.webp" alt="loewe 2">
+                <img src="media/loewe/ojo entero.webp" alt="loewe 3">
+            </div>
+            <div class="slide">
+                <img src="media/loewe/detalle esquina.webp" alt="loewe 4">
+                <img src="media/loewe/detalle centro.webp" alt="loewe 5">
+            </div>
+            <div class="slide single">
+                <img src="media/loewe/general.webp" alt="loewe 1">
+            </div>
         
-        <div class="slide credit">
-            <span class="credit-title">CREDITS</span>
-            <wrap class="credit-info">
-                <span class="credit-type col1">TITLE</span>
-                <span class="credit-type col2">LOEWE Paula´s Ibiza Sunglasses. 2021.</span>
-                <span class="credit-type col1"> SERVICES</span>
-                <span class="credit-type col2"> Art Direction, Campaing, 3D Rendering </span>
-                <span class="credit-type col1">CLIENT</span>
-                <span class="credit-type col2">LOEWE (fake).</span>
-                <span class="credit-type col1">YEAR</span>
-                <span class="credit-type col2">2024.</span>
-                <span class="credit-type col1">LOCATION</span>
-                <span class="credit-type col2">Madrid, ESP.</span>
+            <div class="slide credit">
+                <span class="credit-title">CREDITS</span>
+                <wrap class="credit-info">
+                    <span class="credit-type col1">TITLE</span>
+                    <span class="credit-type col2">LOEWE Paula´s Ibiza Sunglasses. 2021.</span>
+                    <span class="credit-type col1"> SERVICES</span>
+                    <span class="credit-type col2"> Art Direction, Campaing, 3D Rendering </span>
+                    <span class="credit-type col1">CLIENT</span>
+                    <span class="credit-type col2">LOEWE (fake).</span>
+                    <span class="credit-type col1">YEAR</span>
+                    <span class="credit-type col2">2024.</span>
+                    <span class="credit-type col1">LOCATION</span>
+                    <span class="credit-type col2">Madrid, ESP.</span>
             
             
-            </wrap>
-            <span class="credit-title">DESCRIPTION</span>
-            <span class="description-info">
-                LOEWE es históricamente una marca que visualmente, tanto en sus campañas, como en sus prendas, ha tenido un carácter muy relacionado con el arte. Ya sea por los acabados, por el tratamiento de los textiles, por las campañas o por las pasarelas. Incluso en los últimos años, JW Anderson, ha tenido cierto punto surrealista con piezas seleccionadas como el bolso paloma o las prendas pixeladas.<br><br> 
-                De esta manera, se me ocurrió que una buena manera de promocionar  algo que puede acabar siendo tremendamente icónico, y que en este caso lo fueron en el verano de 2021. Presentar este artículo con un carácter casi escultórico. Hacer incapié en las formas que definen las gafas, situarlo en un espacio elegante y que las haga elevar a un estado casi sobervio donde solo estén estas y el vacío.
-            </span>
+                </wrap>
+                <span class="credit-title">DESCRIPTION</span>
+                <span class="description-info">
+                    LOEWE es históricamente una marca que visualmente, tanto en sus campañas, como en sus prendas, ha tenido un carácter muy relacionado con el arte. Ya sea por los acabados, por el tratamiento de los textiles, por las campañas o por las pasarelas. Incluso en los últimos años, JW Anderson, ha tenido cierto punto surrealista con piezas seleccionadas como el bolso paloma o las prendas pixeladas.<br><br> 
+                    De esta manera, se me ocurrió que una buena manera de promocionar  algo que puede acabar siendo tremendamente icónico, y que en este caso lo fueron en el verano de 2021. Presentar este artículo con un carácter casi escultórico. Hacer incapié en las formas que definen las gafas, situarlo en un espacio elegante y que las haga elevar a un estado casi sobervio donde solo estén estas y el vacío.
+                </span>
             
-        </div>
-        <div class="signature">
-            <p>everything by <a href="yo.html">28</a></p>
-        </div>
+            </div>
+            <div class="signature">
+                <p>everything by <a href="yo.html">28</a></p>
+            </div>
 
+        </div>
+        <div class="showProject" data-project="mr4">
+            <div class="slide single icon short">
+                <img src="media/naik/logo naik.svg" alt="logo desf">
+            </div>
+            <div class="slide single">
+                <img src="media/naik/detalle top.webp" alt="naik 1">
+            </div>
+            <div class="slide">
+                <img src="media/naik/detalle logo.webp" alt="naik 2">
+                <img src="media/naik/detalle suela.webp" alt="naik 3">
+
+            </div>
+            <div class="slide single">
+                <img src="media/naik/campaña.webp" alt="naik 4">
+            </div>
+            <div class="slide credit">
+                <span class="credit-title">CREDITS</span>
+                <wrap class="credit-info">
+                    <span class="credit-type col1">TITLE</span>
+                    <span class="credit-type col2">Nike shox mr4.</span>
+                    <span class="credit-type col1"> SERVICES</span>
+                    <span class="credit-type col2"> Art Direction, Campaing, 3D Rendering, Branding </span>
+                    <span class="credit-type col1">CLIENT</span>
+                    <span class="credit-type col2">Nike, MartineRose (fake).</span>
+                    <span class="credit-type col1">YEAR</span>
+                    <span class="credit-type col2">2024.</span>
+                    <span class="credit-type col1">LOCATION</span>
+                    <span class="credit-type col2">Madrid, ESP.</span>
+            
+            
+                </wrap>
+                <span class="credit-title">DESCRIPTION</span>
+                <span class="description-info">
+                    Se trata de un trabajo fotográfico de contrastes donde poder tratar la complejidad y modernindad tanto del zapato en si,
+                    como del concepto que representa. El equipo de Martine Rose creó un zapato para luchar contra el sesgo de género en el
+                    deporte, para alzar a las mujeres en el fútbol, y para elevar un zapato de la "calle" al status de algo más elevado.
+                    <br><br> De esta manera, decidí crear mi propia reinterpretación de la campaña que se realizó para promocionar este
+                    zapato. Ya que, aunque considero muy acertado el mensaje y tipo de narrativa que se escogió, creo que termina pecando de
+                    cierta tosquedad y simpleza visual al escoger una camapaña tan frontal, tratándose de una reinterpretación tan compleja.
+                    Por esta razón, decidí crear un juego de contrastes entre un pasado, situado en el imaginario de todo el mundo, y
+                    relacionado con una mentalidad más cerrada, y la representación del avance y el progeso, del presente y el futuro, como
+                    lo es este zapato.
+                </span>
+            
+            </div>
+            <div class="signature">
+                <p>everything by <a href="yo.html">28</a></p>
+            </div>
+
+        </div>
+        <div class="showProject" data-project="boro">
+            <div class="slide single icon short">
+                <img src="media/boro/boro.svg" alt="Boro">
+            </div>
+            <div class="slide single">
+                <p id="b">"boro", a traditional patchwork style, grew out of necessity rather than aesthetics. Meaning "tattered", the boro style was favored by rural Japanese in the 19th and early 20th centuries. 
+                <br><br><br>
+                Cotton was not common in Japan until well into the 20th century, so when a kimono or futon sleeping cover became scarce in a given area, the women of the family would patch it with a small piece of patchwork fabric using sashiko stitches.</p>
+            </div>
+            <div class="slide single right">
+                <img  src="media/boro/Yorokobu render 1.webp" alt="">
+            </div>
+            <div class="slide single">
+                <img  src="media/boro/Yorokobu render 2.webp" alt="">
+            </div>
+            <div class="slide single">
+                <img  src="media/boro/Yorokobu Mockup entero.webp" alt="">
+            </div>
+            <div class="slide credit">
+                <span class="credit-title">CREDITS</span>
+                <wrap class="credit-info">
+                    <span class="credit-type col1">TITLE</span>
+                    <span class="credit-type col2">Boro.</span>
+                    <span class="credit-type col1"> SERVICES</span>
+                    <span class="credit-type col2"> Art Direction, Editorial, 3D Rendering </span>
+                    <span class="credit-type col1">CLIENT</span>
+                    <span class="credit-type col2">YOROKOBU Magazine.</span>
+                    <span class="credit-type col1">YEAR</span>
+                    <span class="credit-type col2">2023.</span>
+                    <span class="credit-type col1">LOCATION</span>
+                    <span class="credit-type col2">Madrid, ESP.</span>
+            
+            
+                </wrap>
+                <span class="credit-title">DESCRIPTION</span>
+                <span class="description-info">
+                    Taking into account the Japanese character of the magazine and the theme of the name, it was decided that visually the casual style of the textile patches were perfect to convey peace and tranquility. 
+                    <br><br>While visually conveying that calmness, they invite the consumer to learn about this ancient Japanese tradition that, hopefully, will also inspire with that great story of perseverance and creativity.
+                </span>
+            
+            </div>
+            <div class="signature">
+                <p>everything by <a href="yo.html">28</a></p>
+            </div>
+
+        </div>
+        </div>
     </div>
-    <div class="showProject" data-project="mr4">
-        <div class="slide single icon short">
-            <img src="media/naik/logo naik.svg" alt="logo desf">
-        </div>
-        <div class="slide single">
-            <img src="media/naik/detalle top.webp" alt="naik 1">
-        </div>
-        <div class="slide">
-            <img src="media/naik/detalle logo.webp" alt="naik 2">
-            <img src="media/naik/detalle suela.webp" alt="naik 3">
 
-        </div>
-        <div class="slide single">
-            <img src="media/naik/campaña.webp" alt="naik 4">
-        </div>
-        <div class="slide credit">
-            <span class="credit-title">CREDITS</span>
-            <wrap class="credit-info">
-                <span class="credit-type col1">TITLE</span>
-                <span class="credit-type col2">Nike shox mr4.</span>
-                <span class="credit-type col1"> SERVICES</span>
-                <span class="credit-type col2"> Art Direction, Campaing, 3D Rendering, Branding </span>
-                <span class="credit-type col1">CLIENT</span>
-                <span class="credit-type col2">Nike, MartineRose (fake).</span>
-                <span class="credit-type col1">YEAR</span>
-                <span class="credit-type col2">2024.</span>
-                <span class="credit-type col1">LOCATION</span>
-                <span class="credit-type col2">Madrid, ESP.</span>
-            
-            
-            </wrap>
-            <span class="credit-title">DESCRIPTION</span>
-            <span class="description-info">
-                Se trata de un trabajo fotográfico de contrastes donde poder tratar la complejidad y modernindad tanto del zapato en si,
-                como del concepto que representa. El equipo de Martine Rose creó un zapato para luchar contra el sesgo de género en el
-                deporte, para alzar a las mujeres en el fútbol, y para elevar un zapato de la "calle" al status de algo más elevado.
-                <br><br> De esta manera, decidí crear mi propia reinterpretación de la campaña que se realizó para promocionar este
-                zapato. Ya que, aunque considero muy acertado el mensaje y tipo de narrativa que se escogió, creo que termina pecando de
-                cierta tosquedad y simpleza visual al escoger una camapaña tan frontal, tratándose de una reinterpretación tan compleja.
-                Por esta razón, decidí crear un juego de contrastes entre un pasado, situado en el imaginario de todo el mundo, y
-                relacionado con una mentalidad más cerrada, y la representación del avance y el progeso, del presente y el futuro, como
-                lo es este zapato.
-            </span>
-            
-        </div>
-        <div class="signature">
-            <p>everything by <a href="yo.html">28</a></p>
-        </div>
-
-    </div>
-    <div class="showProject" data-project="boro">
-        <div class="slide single icon short">
-            <img src="media/boro/boro.svg" alt="Boro">
-        </div>
-        <div class="slide single">
-            <p id="b">"boro", a traditional patchwork style, grew out of necessity rather than aesthetics. Meaning "tattered", the boro style was favored by rural Japanese in the 19th and early 20th centuries. 
-            <br><br><br>
-            Cotton was not common in Japan until well into the 20th century, so when a kimono or futon sleeping cover became scarce in a given area, the women of the family would patch it with a small piece of patchwork fabric using sashiko stitches.</p>
-        </div>
-        <div class="slide single right">
-            <img  src="media/boro/Yorokobu render 1.webp" alt="">
-        </div>
-        <div class="slide single">
-            <img  src="media/boro/Yorokobu render 2.webp" alt="">
-        </div>
-        <div class="slide single">
-            <img  src="media/boro/Yorokobu Mockup entero.webp" alt="">
-        </div>
-        <div class="slide credit">
-            <span class="credit-title">CREDITS</span>
-            <wrap class="credit-info">
-                <span class="credit-type col1">TITLE</span>
-                <span class="credit-type col2">Boro.</span>
-                <span class="credit-type col1"> SERVICES</span>
-                <span class="credit-type col2"> Art Direction, Editorial, 3D Rendering </span>
-                <span class="credit-type col1">CLIENT</span>
-                <span class="credit-type col2">YOROKOBU Magazine.</span>
-                <span class="credit-type col1">YEAR</span>
-                <span class="credit-type col2">2023.</span>
-                <span class="credit-type col1">LOCATION</span>
-                <span class="credit-type col2">Madrid, ESP.</span>
-            
-            
-            </wrap>
-            <span class="credit-title">DESCRIPTION</span>
-            <span class="description-info">
-                Taking into account the Japanese character of the magazine and the theme of the name, it was decided that visually the casual style of the textile patches were perfect to convey peace and tranquility. 
-                <br><br>While visually conveying that calmness, they invite the consumer to learn about this ancient Japanese tradition that, hopefully, will also inspire with that great story of perseverance and creativity.
-            </span>
-            
-        </div>
-        <div class="signature">
-            <p>everything by <a href="yo.html">28</a></p>
-        </div>
-
-    </div>
     <!-- Navegación entre proyectos: script.js pone el logo del proyecto anterior y del siguiente -->
     <div id="prevProject"><img alt=""></div>
     <div id="nextProject"><img alt=""></div>
     <div id="keepScroll" class="">(scroll down)</div>
+
+    <!-- Botón para cerrar la tarjeta y volver al index (lo controla script.js) -->
+    <div id="goBack">GO BACK</div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
