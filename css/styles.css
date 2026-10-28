@@ -1,6 +1,7 @@
 :root {
     --helve: "helve";
     --helveObl:"helveObl";
+    --helveLt:"helveLt";
     --times: "times";
     --gara: "gara";
     --garaAlt: "garaAlt";
@@ -21,6 +22,11 @@
 @font-face {
     src: url(fonts/HelveticaLTStd-LightObl.otf);
     font-family: "helveObl";
+}
+
+@font-face {
+    src: url(fonts/HelveticaNeueLTStd-Lt.otf);
+    font-family: "helveLt";
 }
 
 @font-face {
@@ -596,7 +602,7 @@ body.index-hidden #projectDots {
     position: fixed;
     color: var(--b);
     height: 20vh;
-    width: 70vw;
+    width: 75vw;
     top: 45vh;
     left: 5vw;
     justify-content: space-evenly;
@@ -606,10 +612,10 @@ body.index-hidden #projectDots {
 }
 
 .text-thing {
-    font-family: var(--gara);
+    font-family: var(--helveLt);
     font-size: 1em;
     text-align: justify;
-    width: 30%;
+    width: 35%;
     transition: 0.3s;
 }
 
@@ -761,7 +767,7 @@ body.index-hidden #projectDots {
 }
 
 .info {
-    font-family: var(--gara);
+    font-family: var(--helveLt);
     font-size: 1em;
     color: var(--b);
     text-align: justify;
@@ -783,7 +789,7 @@ body.index-hidden #projectDots {
 .i3a {
     grid-column: 8 / span 2;
     grid-row: 8 / span 2;
-    font-family: var(--garaAlt);
+    font-family: var(--helveObl);
 }
 
 .i3b {
@@ -813,7 +819,7 @@ body.index-hidden #projectDots {
 }
 
 .d1 {
-    grid-column: 2 / span 6;
+    grid-column: 2 / span 5;
     grid-row: 6 / span 1;
     font-size: 1.2em;
 }
@@ -829,14 +835,27 @@ body.index-hidden #projectDots {
     filter: blur(10px);
 }
 
+/* Copia invisible de la línea más larga de .d3, solo para que .d3a mida lo mismo.
+   Si cambias "instagram" por un texto más largo en dm.html, cámbialo también aquí */
+.d3a::after {
+    content: "instagram";
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
 .d3 {
     grid-column: 10 / span 1;
     grid-row: 15 / span 3;
+    display: grid;
+    justify-content: center;
+    justify-items: start;
+    align-content: start;
 }
 
 .d4 {
     grid-column: 11 / span 1;
-    grid-row: 16 / span 3;
+    grid-row: 15 / span 3;
     color: var(--r);
 }
 
@@ -910,7 +929,7 @@ body.index-hidden #projectDots {
     width: auto;
     display: none;
     font-size: 1em;
-    font-family: var(--gara);
+    font-family: var(--helveLt);
     cursor: default;
 }
 
@@ -940,9 +959,9 @@ body.index-hidden #projectDots {
         --gap: 0.6em;
     }
 
-    /* Margen lateral del contenido dentro de la tarjeta */
+    /* Margen lateral del contenido dentro de la tarjeta: el doble del margen entre la tarjeta y la pantalla */
     .showProject {
-        padding: 0 var(--gap) 1vw var(--gap);
+        padding: 0 calc(var(--gap) * 2) 1vw calc(var(--gap) * 2);
     }
 
     /* ---------- HOME en móvil: una caja por pantalla, con scroll que encaja (estilo reels) ---------- */
@@ -1072,9 +1091,33 @@ body.index-hidden #projectDots {
         margin-top: 3em;
     }
 
+    /* Bloques de fotos de los proyectos (no el logo inicial ni los textos): cada foto ocupa solo
+       su altura real, sin el hueco que dejaba la altura mínima de escritorio (90vh) en las horizontales.
+       Todas las fotos quedan a la misma distancia (--photoGap), sean horizontales o verticales */
+    .showProject {
+        --photoGap: 3em;
+    }
+
+    .slide:has(> img):not(.icon) {
+        height: auto;
+        min-height: 0;
+        margin: var(--photoGap) 0 0 0;
+        flex-grow: 0;
+    }
+
+    .slide:has(> img):not(.icon) img {
+        width: 100%;
+        height: auto;
+    }
+
+    .slide:has(> img):not(.icon) img:not(:first-child) {
+        margin-top: var(--photoGap);
+    }
+
+    /* Textos de los proyectos: mismo margen lateral que las fotos (lo pone .showProject; aquí no se añade ninguno más) */
     .slide p {
         width: 100%;
-        padding: 0 1em 0 1em;
+        padding: 0;
     }
 
     .icon {
@@ -1086,8 +1129,11 @@ body.index-hidden #projectDots {
         width: 50%;
     }
 
+    /* Créditos y descripción: más margen lateral que las fotos (se suma al de .showProject).
+       Cambia --textInset para ajustarlo */
     .credit {
-        padding: 7em 0 0 0;
+        --textInset: calc(var(--gap) * 2);
+        padding: 7em var(--textInset) 0 var(--textInset);
         grid-template-columns: 1fr;
         width: auto;
     }
@@ -1107,6 +1153,23 @@ body.index-hidden #projectDots {
     .s1, .s2, .s3, .s4, .s5, .s6, .s7, .s8, .s9, .s10, .s11, .s12, .s13 {
         grid-column: span 6;
         grid-row: auto;
+    }
+
+    /* Imágenes de stuff: mismo margen lateral que las cajas de la home */
+    .stuff {
+        margin: 0 var(--gap);
+    }
+
+    /* Sin el hueco que deja debajo una imagen tratada como texto (espacio de los descendentes) */
+    .stuff img {
+        display: block;
+    }
+
+    /* Página de stuff: el mismo margen arriba de la primera imagen y abajo de la última
+       (más el espacio que reserva el sistema arriba y abajo) */
+    body:has(.stuff) {
+        padding-top: calc(var(--gap) + env(safe-area-inset-top));
+        padding-bottom: calc(var(--gap) + env(safe-area-inset-bottom));
     }
 
     .s5, .s6, .s9 {
@@ -1164,8 +1227,9 @@ body.index-hidden #projectDots {
     }
 
     .i1 {
-        grid-column: 2 / span 4;
+        grid-column: 2 / span 5;
         grid-row: 4 / span 1;
+        padding-right: 10vw;
     }
 
     .i2 {
@@ -1182,7 +1246,12 @@ body.index-hidden #projectDots {
     }
     .i4 {
         grid-column: 3 / span 3;
-        grid-row: 13 / span 2;
+        grid-row: 11 / span 2;
+    }
+
+    .i2, .i3a, .i3b, .i4 {
+        grid-column: 3 / span 4;
+        padding-right: 10vw;
     }
 
     .i5 {
@@ -1199,6 +1268,11 @@ body.index-hidden #projectDots {
         font-size: 1.2em;
     }
 
+    .d3a {
+        grid-column: 4 ;
+        grid-row: 10 / span 3;
+    }
+
     .d3 {
         grid-column: 4;
         grid-row: 11 / span 3;
@@ -1206,7 +1280,7 @@ body.index-hidden #projectDots {
 
     .d4 {
         grid-column: 5 / span 1;
-        grid-row: 12 / span 3;
+        grid-row: 11 / span 3;
         color: var(--r);
     }
 }
