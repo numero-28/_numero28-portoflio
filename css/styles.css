@@ -770,7 +770,7 @@ body.index-hidden #projectDots {
     font-family: var(--helveLt);
     font-size: 1em;
     color: var(--b);
-    text-align: justify;
+    text-align: left;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -1178,13 +1178,14 @@ body.index-hidden #projectDots {
 
     .my-things {
         top: 30vh;
-        width: 80vw;
+        width: 93vw;
         color: var(--w);
     }
 
     .text-thing {
-        width: 40%;
+        width: 45%;
         font-size: 1.2em;
+        text-align: left;
     }
 
     .carousel-media {
